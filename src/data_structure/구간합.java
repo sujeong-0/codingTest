@@ -21,42 +21,45 @@ import java.util.Arrays;
 
 public class 구간합 {
 	public static void main(String[] args) {
-		System.out.println(Arrays.toString(solution("5 3\n5 4 3 2 1\n1 3\n2 4\n5 5")));;
+		System.out.println(Arrays.toString(solution("5 3\n5 4 3 2 1\n1 3\n2 4\n5 5")));
+
+		Arrays.sort(new int[]{1, 2, 3, 4});
+
 	}
 
 	public static long[] solution(String question) {
 
-		int DATA_COUNT = Integer.parseInt(question.split("\n")[0].trim().split(" ")[0]); // 데이터의 개수
+		int DATA_COUNT   = Integer.parseInt(question.split("\n")[0].trim().split(" ")[0]); // 데이터의 개수
 		int ANSWER_COUNT = Integer.parseInt(question.split("\n")[0].trim().split(" ")[1]); // 질의 개수
 
 		String[] dataStr = question.split("\n")[1].trim().split(" ");
-		int[] data = new int[DATA_COUNT];// 데이터
-		long[] dataSum = new long[DATA_COUNT];// 구간합 데이터
-		long[] answer = new long[ANSWER_COUNT];// 구간합 데이터
+		int[]    data    = new int[DATA_COUNT];// 데이터
+		long[]   dataSum = new long[DATA_COUNT];// 구간합 데이터
+		long[]   answer  = new long[ANSWER_COUNT];// 구간합 데이터
 
 
 		// 1. 구간합 구하기
-		for (int i = 0; i < dataStr.length; i++) {
+		for(int i = 0; i < dataStr.length; i++) {
 			data[i] = Integer.parseInt(dataStr[i]);
 
-			if (i == 0) {
+			if(i == 0) {
 				dataSum[i] = data[i];
 			} else {
-				dataSum[i] = dataSum[i-1] +  data[i];
+				dataSum[i] = dataSum[i - 1] + data[i];
 			}
 		}
 
 
-		String[] questions = question.split("\n",3)[2].split("\n");
+		String[] questions = question.split("\n", 3)[2].split("\n");
 
 		// 2. 질의에 대한 답 구하기
-		for (int i = 0; i < ANSWER_COUNT; i++) {
+		for(int i = 0; i < ANSWER_COUNT; i++) {
 			String[] indexes = questions[i].split(" ");
-			int indexI= Integer.parseInt(indexes[1]) -1;
-			int indexJ= Integer.parseInt(indexes[0]) -2;
+			int      indexI  = Integer.parseInt(indexes[1]) - 1;
+			int      indexJ  = Integer.parseInt(indexes[0]) - 2;
 
-			long Si = indexI < 0 ?0: dataSum[indexI];
-			long Sj = indexJ < 0 ?0: dataSum[indexJ];
+			long Si = indexI < 0 ? 0 : dataSum[indexI];
+			long Sj = indexJ < 0 ? 0 : dataSum[indexJ];
 
 			answer[i] = Si - Sj;
 		}
