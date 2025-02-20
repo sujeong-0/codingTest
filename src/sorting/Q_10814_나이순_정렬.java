@@ -14,7 +14,7 @@ import java.util.*;
  * -----------------------------------------------------------
  * 2/15/25        ggong       최초 생성
  */
-public class 나이순_정렬 {
+public class Q_10814_나이순_정렬 {
 	public static void main(String[] args) throws IOException {
 
 
@@ -109,19 +109,19 @@ public class 나이순_정렬 {
 	}
 
 
-}
-class User {
-	int age;
-	String name;
-	int order;
+	static class User {
+		int age;
+		String name;
+		int order;
 
-	public User(int age, String name, int order) {
-		this.age = age;
-		this.name = name;
-		this.order = order;
-	}
+		public User(int age, String name, int order) {
+			this.age = age;
+			this.name = name;
+			this.order = order;
+		}
 
-	public String toString() {
-		return String.format("%d %s\n", this.age, this.name);
+		public String toString() {
+			return String.format("%d %s\n", this.age, this.name);
+		}
 	}
 }

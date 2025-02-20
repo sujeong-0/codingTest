@@ -27,7 +27,7 @@ import java.util.*;
  * - 출력 양식: 첫째 줄부터 N개의 줄에 정수를 한 개씩 출력
  * - 출력 내용: i번째 줄에는 정점 i의 방문 순서를 출력, 시작 정점에서 방문할 수 없는 경우 0을 출력
  */
-public class Q24480_DFS2 {
+public class Q_24480_DFS2 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());

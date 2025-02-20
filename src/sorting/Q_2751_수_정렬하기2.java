@@ -14,7 +14,7 @@ import java.util.Arrays;
  * -----------------------------------------------------------
  * 2/15/25        ggong       최초 생성
  */
-public class 수_정렬하기2 {
+public class Q_2751_수_정렬하기2 {
 	public static void main(String[] args) throws IOException { // 병합정렬
 		BufferedReader br    = new BufferedReader(new InputStreamReader(System.in));
 		int            count = Integer.parseInt(br.readLine());

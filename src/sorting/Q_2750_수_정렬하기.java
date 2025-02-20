@@ -14,7 +14,20 @@ import java.util.Arrays;
  * -----------------------------------------------------------
  * 2/15/25        ggong       최초 생성
  */
-public class 수_정렬하기 {
+
+
+/**
+ * [조건]
+ * -
+ * <p>
+ * [입력]
+ * - 10의 배수 5개 입력
+ * <p>
+ * [출력]
+ * - 1번째 줄 평균
+ * - 2번쨰 줄 중앙값
+ */
+public class Q_2750_수_정렬하기 {
 	public static void main(String[] args) throws IOException {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

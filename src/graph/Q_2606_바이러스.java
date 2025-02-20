@@ -28,7 +28,7 @@ import java.util.StringTokenizer;
  * [출력]
  * 1번 컴퓨터가 웜 바이러스에 걸렸을 때, 1번 컴퓨터를 통해 웜 바이러스에 걸리게 되는 컴퓨터의 수
  */
-public class Q2606_바이러스 {
+public class Q_2606_바이러스 {
 	public static void main(String[] args) throws IOException {
 		final int START_COMPUTER = 1;
 

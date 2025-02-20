@@ -31,7 +31,7 @@ import java.util.*;
  * - 첫째 줄에 DFS를 수행한 결과,  V부터 방문된 점을 순서대로 출력
  * - BFS를 수행한 결과,  V부터 방문된 점을 순서대로 출력
  */
-public class Q1260_DFS와_BFS {
+public class Q_1260_DFS와_BFS {
 	public static void main(String[] args) throws IOException {
 
 		BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));

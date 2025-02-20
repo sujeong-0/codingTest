@@ -15,7 +15,29 @@ package graph;
 import java.io.*;
 import java.util.*;
 
-public class Q24444_BFS {
+/**
+ * [조건]
+ * - N개의 정점과 M개의 간선으로 구성된 무방향 그래프(undirected graph)
+ * - 정점 번호는 1번부터 N번이고 모든 간선의 가중치는 1
+ * - 인접 정점은 오름차순으로 방문한다.
+ * <p>
+ * [문제]
+ * 정점 R에서 시작하여 깊이 우선 탐색으로 노드를 방문할 경우의 노드의 방문 순서를 출력
+ * <p>
+ * [입력]
+ * - 1번줄:  정점의 수 N (5 ≤ N ≤ 100,000), 간선의 수 M (1 ≤ M ≤ 200,000), 시작 정점 R (1 ≤ R ≤ N)
+ * - 이후 M개 줄에 간선 정보 u v,  u와 정점 v의 가중치 1인 양방향 간선 (1 ≤ u < v ≤ N, u ≠ v),  모든 간선의 (u, v) 쌍의 값은 서로 다르다
+ * <p>
+ * [출력]
+ * - 첫째 줄부터 N개의 줄에 정수를 한 개씩 출력
+ * - i번째 줄에는 정점 i의 방문 순서를 출력
+ * - 시작 정점의 방문 순서는 1, 방문 못하면 0
+ * <p>
+ * [예상되는 문제 구간]
+ * - 오름차순으로 방문해야하는 것
+ * - 여러번 DFS를 실행해야 하는것?
+ */
+public class Q_24479_DFS {
 	public static void main(String[] args) throws IOException {
 		BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -41,15 +63,16 @@ public class Q24444_BFS {
 		}
 
 		// DFS
-		Queue<Integer> queue = new LinkedList<>();
+		Stack<Integer> stack = new Stack<>();
+		stack.add(startNode);// start node 지정
 		int count = 1;
-		queue.add(startNode);// start node 지정
-		while(!queue.isEmpty()) {
-			int now = queue.poll();
-			if(visited[now] !=0) {
+		while(!stack.isEmpty()) {
+			int now = stack.pop();
+			if(visited[now] != 0) {
 				continue;
 			}
 			visited[now] = count++;
+
 			ArrayList<Integer> next = data[now];
 			Collections.sort(next);
 			Collections.reverse(next);
@@ -57,9 +80,10 @@ public class Q24444_BFS {
 			for(int i = 0; i < next.size(); i++) {
 				int n = next.get(i);
 				if(visited[n] == 0) {
-					queue.add(n);
+					stack.add(n);
 				}
 			}
+
 		}
 
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
